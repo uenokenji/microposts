@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :edit, :update, :destroy]
   resources :microposts
+  resources :relationships, only: [:create, :destroy]
 end
