@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:edit, :update]
-
+before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
+                                        :following, :followers]
   def show # 追加
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
@@ -21,6 +21,20 @@ before_action :set_user, only: [:edit, :update]
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
+  end
+  
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show'
+  end
+  
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show'
   end
   
   def create
