@@ -1,0 +1,8 @@
+<li id="followings-<%= micropost.id %>">
+  <%= link_to gravatar_for(followings.user, size: 50), followings.user %>
+  <span class="user"><%= link_to followings.user.name, followings.user %></span>
+  <span class="content"><%= followings.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(followings.created_at) %> ago.
+  </span>
+</li>

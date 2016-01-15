@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers]
+                                        :followings, :followers]
   def show # 追加
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
@@ -23,18 +23,16 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
     end
   end
   
-  def following
-    @title = "followed"
+  def followings
+    @title = "followings"
     @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
-    render 'show'
+    @users = @user.following_users.page(params[:page])
   end
   
   def followers
-    @title = "Followers"
+    @title = "followers"
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show'
+    @users = @user.follower_users.page(params[:page])
   end
   
   def create

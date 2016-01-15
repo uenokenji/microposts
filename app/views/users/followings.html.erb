@@ -15,11 +15,17 @@
 </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <% if @users.any? %>
+      <h3>Followings</h3>
       <ol class="microposts">
-        <%= render @microposts %>
+        <% @users.each do |user| %>
+          <%= gravatar_for user %>
+          <ul>
+            <li><%= user.name %></li>
+            <li><%= user.area %></li>
+            <li><%= user.email %></li>
+          </ul>
+        <% end %>
       </ol>
     <% end %>
   </div>
