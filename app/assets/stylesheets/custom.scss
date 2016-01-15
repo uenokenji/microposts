@@ -136,11 +136,12 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
 
+.gravatar {
+  margin: 1px 1px;
+  overflow: hidden;
+  clear:both;
+}
 .gravatar_edit {
   margin-top: 15px;
 }
