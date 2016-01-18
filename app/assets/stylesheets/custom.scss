@@ -137,14 +137,6 @@ aside {
 }
 
 
-.gravatar {
-  margin: 1px 1px;
-  overflow: hidden;
-  clear:both;
-}
-.gravatar_edit {
-  margin-top: 15px;
-}
 .stats {
   overflow: auto;
   margin-top: 0;
@@ -168,18 +160,9 @@ aside {
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
 
-.users.follow {
+
+users.follow {
   padding: 0;
 }
 /* microposts */
@@ -189,7 +172,7 @@ aside {
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-top: 0px solid #e8e8e8;
   }
   .user {
     margin-top: 5em;
@@ -211,8 +194,9 @@ aside {
   .gravatar {
     float: left;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
   }
+  
 }
 
 aside {
@@ -227,4 +211,8 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+ #home {
+     background-image: asset-url("back.jpg")
 }

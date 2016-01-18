@@ -20,8 +20,9 @@
       <ol class="microposts">
         <% @users.each do |user| %>
           <%= gravatar_for user %>
-          <ul>
-            <li><%= user.name %></li>
+          <span><%= link_to "profile", user %></span>
+          <ul class="list-unstyled">
+            <li ><%= user.name %></li>
             <li><%= user.area %></li>
             <li><%= user.email %></li>
           </ul>

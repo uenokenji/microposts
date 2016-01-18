@@ -11,9 +11,11 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
   end
   
   def edit # 課題
+      @user = User.find(params[:id])
   end
   
   def update # 課題
+    @user = User.find(params[:id])
     if @user.update(user_params)
       # 保存に成功した場合はトップページへリダイレクト
       redirect_to root_path , notice: "update OK!"
