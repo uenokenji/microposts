@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(current_user) do |f| %>
+    <%= form_for(@user) do |f| %>
       <div class="form-group">
         <label for="message_name" class="control-label col-md-4">名前</label>
         <div class="col-md-12">
@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="email" class="control-label col-md-4">EMail</label>
+        <label for="email" class="control-label col-md-4">メールアドレス</label>
         <div class="col-md-12">
         <%= f.text_field :email ,:class => "form-control" %>
         </div>
@@ -19,6 +19,18 @@
         <label for="area" class="control-label col-md-4">お住まい</label>
         <div class="col-md-12">
         <%= f.text_field :area ,:class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="control-label col-md-4">パスワード</label>
+        <div class="col-md-12">
+        <%= f.password_field :password ,:class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation" class="control-label col-md-4">パスワード確認</label>
+        <div class="col-md-12">
+        <%= f.password_field :password_confirmation ,:class => "form-control" %>
         </div>
       </div>
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
