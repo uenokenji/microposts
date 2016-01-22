@@ -3,6 +3,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+
+    
       <div class="form-group">
         <label for="message_name" class="control-label col-md-4">名前</label>
         <div class="col-md-12">
