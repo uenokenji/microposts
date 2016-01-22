@@ -11,6 +11,7 @@ before_action :set_user, only: [:edit, :update]
   end
   
   def edit # 課題
+    @user = User.find(params[:id])
   end
   
   def update # 課題
