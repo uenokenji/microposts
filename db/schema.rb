@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 20160118041707) do
   add_index "favorites", ["tweet_id"], name: "index_favorites_on_tweet_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
-  create_table "messages", force: :cascade do |t|
-    t.string   "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
